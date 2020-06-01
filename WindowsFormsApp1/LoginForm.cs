@@ -18,7 +18,6 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
         private void login_Click(object sender, EventArgs e)
         {
 
@@ -40,13 +39,19 @@ namespace WindowsFormsApp1
             if(new tb_EmployeeMethod().Find(userName.Text,password.Text) == true)
              */
             {
+                /*MainForm frm = new MainForm();
+                frm.curUser = userName.Text;
+                frm.Show();*/
                 JhGoodsForm jhGoodsForm = new JhGoodsForm("YH");
                 jhGoodsForm.Show();
+                JhGoodsForm jhGoodsForm1 = new JhGoodsForm("YHH");
+                jhGoodsForm1.Show();
+                JhGoodsForm jhGoodsForm2 = new JhGoodsForm("YHHHH");
+                jhGoodsForm2.Show();
                 /*CompanyInfoForm companyInfoForm = new CompanyInfoForm();
                 companyInfoForm.Show();*/
-                /*MainForm frm = new MainForm();
-                frm.Show();
-                this.Hide();*/
+
+                this.Hide();
             }
           
 

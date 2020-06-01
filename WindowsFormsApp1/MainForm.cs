@@ -17,12 +17,20 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        public string curUser; //当前登录的用户
 
         private void employeeMenuItem_Click(object sender, EventArgs e)
         {
-            EmployeeInfoForm frm = new EmployeeInfoForm();
-            frm.Owner = this;
-            frm.ShowDialog();
+            //if(curUser == "root")
+            {
+                EmployeeInfoForm frm = new EmployeeInfoForm();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
+            //else
+            {
+            //    MessageBox.Show("当前登录账号没有访问该功能的权限");
+            }
         }
 
         private void companyMenuItem_Click(object sender, EventArgs e)
@@ -34,7 +42,9 @@ namespace WindowsFormsApp1
 
         private void goodsPurchaseMenuItem_Click(object sender, EventArgs e)
         {
-
+            JhGoodsForm jhGoodsForm = new JhGoodsForm("YH");
+            jhGoodsForm.Owner = this;
+            jhGoodsForm.ShowDialog();
         }
 
         private void GoodsInfoMenuItem_Click(object sender, EventArgs e)
@@ -54,17 +64,39 @@ namespace WindowsFormsApp1
 
         private void 库存查询ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            GoodsFind frm = new GoodsFind();
+            frm.Owner = this;
+            frm.ShowDialog();
         }
 
         private void 库存报警ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            GoodsWarning frm = new GoodsWarning();
+            frm.Owner = this;
+            frm.ShowDialog();
         }
 
-        private void 进货管理ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
+
+        private void DataBackupMenuItem_Click(object sender, EventArgs e)
+        {
+            DataBackupForm frm = new DataBackupForm();
+            frm.Owner = this;
+            frm.ShowDialog();
+        }
+
+        private void DataRecoveryMenuItem_Click(object sender, EventArgs e)
+        {
+            //if(curUser == "root")
+            {
+                DataRestore frm = new DataRestore();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
+            //else
+            {
+            //    MessageBox.Show("当前登录账号没有访问该功能的权限");
+            }
         }
     }
 }
